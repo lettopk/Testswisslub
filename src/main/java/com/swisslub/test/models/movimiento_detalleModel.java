@@ -1,6 +1,6 @@
 package com.swisslub.test.models;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "movimiento_detalle")

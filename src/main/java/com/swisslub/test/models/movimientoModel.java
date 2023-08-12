@@ -5,13 +5,15 @@ import java.sql.Date;
 import jakarta.persistence.*;
 
 
+
+
 @Entity
 @Table(name = "movimiento")
 
 public class movimientoModel {
     
     @Id
-    private int id;
+    private Integer id;
 
     private int id_empresa;
     private String descripcion;

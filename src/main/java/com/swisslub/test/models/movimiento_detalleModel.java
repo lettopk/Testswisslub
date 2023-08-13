@@ -1,21 +1,22 @@
 package com.swisslub.test.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;;
 
 @Entity
 @Table(name = "movimiento_detalle")
 
 
 public class movimiento_detalleModel {
-
+    
     @Id
-    private int id;
+    private Integer id;
 
     //(Id de la tabla movimiento.)
-    @ManyToOne
+    //@ManyToOne
     @JoinColumn(name="id")
-    private int movimiento_id;
+    private Integer movimiento_id;
 
+    
     private String item_codigo;
     private int cantidad_enviada;
 

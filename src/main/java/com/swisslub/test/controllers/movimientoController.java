@@ -37,9 +37,10 @@ public class movimientoController {
         return this.movimientoService.obtenerporId(id);
     }
 
+
     @GetMapping("/query")
-    public Optional<movimientoModel> obtenerMovimientoPorEstado(@RequestParam("id") Integer id) {
-        return this.movimientoService.obtenerporId(id);
+    public ArrayList<movimientoModel> obtenerMovimientoPorEstado(@RequestParam("estado") String estado) {
+        return this.movimientoService.obtenerporEstado(estado);
     }
     
     @DeleteMapping (path = "/{id}")

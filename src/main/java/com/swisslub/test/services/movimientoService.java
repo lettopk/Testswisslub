@@ -26,6 +26,10 @@ public class movimientoService {
         return movimientoRepository.findById(id);
     }
 
+    public ArrayList<movimientoModel> obtenerporEstado(String estado) {
+        return movimientoRepository.findByEstado(estado);
+    }
+
     public boolean eliminarMovimiento(Integer id) {
         try {
             movimientoRepository.deleteById(id);

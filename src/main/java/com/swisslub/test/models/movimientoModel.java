@@ -4,9 +4,6 @@ import java.sql.Date;
 
 import jakarta.persistence.*;
 
-
-
-
 @Entity
 @Table(name = "movimiento")
 

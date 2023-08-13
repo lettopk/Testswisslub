@@ -15,42 +15,44 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.swisslub.test.models.movimientoModel;
 import com.swisslub.test.models.movimiento_detalleModel;
-import com.swisslub.test.services.movimiento_detalleService;
+import com.swisslub.test.services.movimientoDetalleService;
 
 @RestController
-@RequestMapping("/movimiento_detalle")
-public class movimiento_detalleController {
+@RequestMapping("/movimientoDetalle")
+public class movimientoDetalleController {
     @Autowired
-    movimiento_detalleService movimiento_detalleService;
+    movimientoDetalleService movimientoDetalleService;
 
     @GetMapping
-    public ArrayList<movimiento_detalleModel> obtenerMovimiento_detalle() {
-        return movimiento_detalleService.obtenerMovimiento_detalle();
+    public ArrayList<movimiento_detalleModel> obtenerMovimientoDetalle() {
+        return movimientoDetalleService.obtenerMovimientoDetalle();
     }
 
     @PostMapping
-    public movimiento_detalleModel guardarMovimiento_detalle(@RequestBody movimiento_detalleModel movimiento_detalle) {
-        return this.movimiento_detalleService.guardarMovimiento_detalle(movimiento_detalle);
+    public movimiento_detalleModel guardarMovimientoDetalle(@RequestBody movimiento_detalleModel movimiento_detalle) {
+        return this.movimientoDetalleService.guardarMovimientoDetalle(movimiento_detalle);
     }
 
     @GetMapping (path = "/{id}")
-    public Optional<movimiento_detalleModel> obtenerMovimiento_detallePorId(@PathVariable("id") Integer id) {
-        return this.movimiento_detalleService.obtenerporId(id);
+    public Optional<movimiento_detalleModel> obtenerMovimientoDetallePorId(@PathVariable("id") Integer id) {
+        return this.movimientoDetalleService.obtenerporId(id);
     }
 
+    /*
     @GetMapping("/query")
-    public Optional<movimiento_detalleModel> obtenerMovimiento_detallePorEstado(@RequestParam("id") Integer id) {
-        return this.movimiento_detalleService.obtenerporId(id);
-    }
-    
+    public ArrayList<movimiento_detalleModel> obtenerMovimientoPorEstado(@RequestParam("estado") String estado) {
+        return this.movimientoService.obtenerporEstado(estado);
+    }*/
+
     @DeleteMapping (path = "/{id}")
     public String eliminarPorId(@PathVariable("id") Integer id) {
-        boolean ok = this.movimiento_detalleService.eliminarMovimiento_detalle(id);
+        boolean ok = this.movimientoDetalleService.eliminarMovimientoDetalle(id);
         if (ok) {
             return "se eliminó el movimiento con id: " + id;
         } else {
             return "No pudo eliminarl el movimiento con id: " + id;
         }
     }
+
     
 }

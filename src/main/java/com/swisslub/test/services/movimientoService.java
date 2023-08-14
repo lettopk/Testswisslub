@@ -10,7 +10,7 @@ import com.swisslub.test.models.movimientoModel;
 import com.swisslub.test.repositories.movimientoRepository;
 
 @Service
-public class movimientoService {
+public class movimientoService implements movimientoSerice2{
     @Autowired
     movimientoRepository movimientoRepository;
 
@@ -38,6 +38,13 @@ public class movimientoService {
             return false;
         }
     }
+
+    @Override
+    public ArrayList<movimientoModel> listaMoviminento() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'listaMoviminento'");
+    }
+
     
     
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.swisslub.test.models.movimientoModel;
@@ -22,6 +23,9 @@ import com.swisslub.test.services.movimientoDetalleService;
 public class movimientoDetalleController {
     @Autowired
     movimientoDetalleService movimientoDetalleService;
+
+    @Autowired
+    com.swisslub.test.services.movimientoService movimientoService;
 
     @GetMapping
     public ArrayList<movimiento_detalleModel> obtenerMovimientoDetalle() {
@@ -37,12 +41,14 @@ public class movimientoDetalleController {
     public Optional<movimiento_detalleModel> obtenerMovimientoDetallePorId(@PathVariable("id") Integer id) {
         return this.movimientoDetalleService.obtenerporId(id);
     }
-
-    /*
-    @GetMapping("/query")
-    public ArrayList<movimiento_detalleModel> obtenerMovimientoPorEstado(@RequestParam("estado") String estado) {
+    
+    //consulta el listado de movimiento por estado
+    @GetMapping("/estado")
+    @ResponseBody
+    public ArrayList<movimientoModel> obtenerMovimientoPorEstado(@RequestParam("estado") String estado) {
         return this.movimientoService.obtenerporEstado(estado);
-    }*/
+    
+    }
 
     @DeleteMapping (path = "/{id}")
     public String eliminarPorId(@PathVariable("id") Integer id) {

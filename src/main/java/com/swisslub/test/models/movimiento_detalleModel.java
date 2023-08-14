@@ -3,9 +3,8 @@ package com.swisslub.test.models;
 import org.hibernate.annotations.JoinColumnOrFormula;
 import org.hibernate.annotations.JoinColumnsOrFormulas;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.*;;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "movimiento_detalle")
@@ -17,7 +16,7 @@ public class movimiento_detalleModel {
     private Integer id;
 
     //(Id de la tabla movimiento.)
-    @JsonIgnore
+    
     @JoinColumn(name = "id")	
     private Integer movimiento_id;
 

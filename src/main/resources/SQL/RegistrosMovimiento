@@ -1,0 +1,70 @@
+    {
+        "id": 1,
+        "id_empresa": 1001,
+        "descripcion": "Envio para bodega principal, con articulos varios",
+        "bodega_origen_codigo": "BOD-03",
+        "bodega_destino_codigo": "BOD-01",
+        "fecha_creacion": 20230714,
+        "fecha_entrega": 20230804,
+        "estado": "P"
+    },
+    {
+        "id": 2,
+        "id_empresa": 1002,
+        "descripcion": "Envio para bodega local, con articulo pesado",
+        "bodega_origen_codigo": "BOD-01",
+        "bodega_destino_codigo": "BOD-04",
+        "fecha_creacion": 20230720,
+        "fecha_entrega": 20230725,
+        "estado": "P"
+    },
+    {
+        "id": 3,
+        "id_empresa": 1002,
+        "descripcion": "Envio para bodega principal, con articulo por garantia",
+        "bodega_origen_codigo": "BOD-02",
+        "bodega_destino_codigo": "BOD-01",
+        "fecha_creacion": 20230802,
+        "fecha_entrega": 20230810,
+        "estado": "P"
+    },
+    {
+        "id": 4,
+        "id_empresa": 1001,
+        "descripcion": "carga pesada",
+        "bodega_origen_codigo": "BOD-03",
+        "bodega_destino_codigo": "BOD-02",
+        "fecha_creacion": 20230810,
+        "fecha_entrega": 20230820,
+        "estado": "P"
+    },
+    {
+        "id": 5,
+        "id_empresa": 1002,
+        "descripcion": "Envio repuestos , con  5 articulos",
+        "bodega_origen_codigo": "BOD-03",
+        "bodega_destino_codigo": "BOD-02",
+        "fecha_creacion": 20230815,
+        "fecha_entrega": 20230825,
+        "estado": "P"
+    },
+    {
+        "id": 6,
+        "id_empresa": 1002,
+        "descripcion": "Envio garantia , con  3 articulos",
+        "bodega_origen_codigo": "BOD-03",
+        "bodega_destino_codigo": "BOD-01",
+        "fecha_creacion": 20230812,
+        "fecha_entrega": 20230816,
+        "estado": "P"
+    },
+    {
+        "id": 7,
+        "id_empresa": 1001,
+        "descripcion": "Envio articulos de oficina , papeleria",
+        "bodega_origen_codigo": "BOD-01",
+        "bodega_destino_codigo": "BOD-04",
+        "fecha_creacion": 20230826,
+        "fecha_entrega": 20230830,
+        "estado": "P"
+    }

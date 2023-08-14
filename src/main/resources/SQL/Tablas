@@ -1,0 +1,30 @@
+//Creando base de datos 
+
+CREATE SCHEMA `testswisslub` DEFAULT CHARACTER SET utf8 ;
+
+//Crear la tabla movimiento
+
+use testswisslub;
+
+CREATE TABLE movimiento
+(
+id int primary key not null,
+id_empresa  int not null,
+descripcion varchar(200) not null,
+bodega_origen_codigo varchar (10) not null,
+bodega_destino_codigo varchar (10) not null,
+fecha_creacion DATE not null,
+fecha_entrega DATE not null,
+estado varchar (1) not null
+);
+use testswisslub;
+
+CREATE TABLE movimiento_detalle
+(
+id int primary key not null,
+movimiento_id int not null,
+item_codigo varchar(20) not null,
+cantidad_enviada int not null,
+CONSTRAINT fk_id_movimiento FOREIGN KEY (movimiento_id) 
+REFERENCES movimiento (id)
+);

@@ -22,6 +22,7 @@ public class movimientoController {
     @Autowired
     movimientoService movimientoService;
 
+
     @GetMapping
     public ArrayList<movimientoModel> obtenerMovimiento() {
         return movimientoService.obtenerMovimiento();
@@ -30,8 +31,8 @@ public class movimientoController {
     @PostMapping
     public movimientoModel guardarMovimiento(@RequestBody movimientoModel movimiento) {
         return this.movimientoService.guardarMovimiento(movimiento);
-    }
-
+    }  
+    
     @GetMapping (path = "/{id}")
     public Optional<movimientoModel> obtenerMovimientoPorId(@PathVariable("id") Integer id) {
         return this.movimientoService.obtenerporId(id);

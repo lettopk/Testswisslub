@@ -36,6 +36,7 @@ public class movimientoDetalleController {
     public movimiento_detalleModel guardarMovimientoDetalle(@RequestBody movimiento_detalleModel movimiento_detalle) {
         return this.movimientoDetalleService.guardarMovimientoDetalle(movimiento_detalle);
     }
+    
 
     @GetMapping (path = "/{id}")
     public Optional<movimiento_detalleModel> obtenerMovimientoDetallePorId(@PathVariable("id") Integer id) {

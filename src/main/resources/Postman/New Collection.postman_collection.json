@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "f30d9084-e4ff-499e-9758-79baeef20257",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get movimiento  findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movimiento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movimiento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post movimiento  Agragar/actualizar registros",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 8,\r\n        \"id_empresa\": 1002,\r\n        \"descripcion\": \"Envio articulos , herramienta\",\r\n        \"bodega_origen_codigo\": \"BOD-01\",\r\n        \"bodega_destino_codigo\": \"BOD-02\",\r\n        \"fecha_creacion\": 20230827,\r\n        \"fecha_entrega\": 20230830,\r\n        \"estado\": \"P\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/movimiento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movimiento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movimiento  findById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movimiento/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movimiento",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete movimiento  ById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movimiento/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movimiento",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movimiento_detalle findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movimientoDetalle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movimientoDetalle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post movimiento_detalle  Agragar/actualizar registros",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 8,\r\n        \"item_codigo\": \"hhs964\",\r\n        \"cantidad_enviada\": 5,\r\n        \"movimiento_id\": 7\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/movimientoDetalle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movimientoDetalle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movimiento_detalle  findById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movimientoDetalle/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movimientoDetalle",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movimiento_detalle findByEstado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movimientoDetalle/estado?estado=p",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movimientoDetalle",
+						"estado"
+					],
+					"query": [
+						{
+							"key": "estado",
+							"value": "p"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete movimiento_detalle ById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movimientoDetalle/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movimientoDetalle",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

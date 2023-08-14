@@ -35,7 +35,7 @@ public class movimiento_detalleModel {
         this.id = id;
     }
 
-    public int getMovimiento() {
+    public int getMovimiento_id() {
         return movimiento_id;
     }
     

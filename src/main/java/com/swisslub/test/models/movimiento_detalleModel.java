@@ -4,8 +4,7 @@ import org.hibernate.annotations.JoinColumnOrFormula;
 import org.hibernate.annotations.JoinColumnsOrFormulas;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import jakarta.persistence.*;;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "movimiento_detalle")
@@ -17,11 +16,17 @@ public class movimiento_detalleModel {
     private Integer id;
 
     //(Id de la tabla movimiento.)
-    @JsonIgnore
-    @JoinColumn(name = "id")	
-    private Integer movimiento_id;
-
     
+    @ManyToOne()
+    @JoinColumn(name = "movimiento_id")	
+    private movimientoModel movimiento;
+
+    /*@Transient
+    private movimientoModel movimiento_id;*/
+
+    /*public Integer getMovimientoId() {
+        return movimiento != null ? movimiento.getId() : null;
+    }*/
     
     private String item_codigo;
     private int cantidad_enviada;
@@ -35,12 +40,12 @@ public class movimiento_detalleModel {
         this.id = id;
     }
 
-    public int getMovimiento_id() {
-        return movimiento_id;
+    public movimientoModel getMovimiento() {
+        return movimiento;
     }
     
-    public void setMovimiento_id(int movimiento_id) {
-        this.movimiento_id = movimiento_id;
+    public void setMovimiento_id(movimientoModel movimiento) {
+        this.movimiento = movimiento;
     }
 
     public String getItem_codigo() {

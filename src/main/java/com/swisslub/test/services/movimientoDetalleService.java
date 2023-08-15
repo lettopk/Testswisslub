@@ -1,6 +1,7 @@
 package com.swisslub.test.services;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +33,25 @@ public class movimientoDetalleService {
         return movimientoDetalleRepository.findById(id);
     }
 
-    public ArrayList<movimientoModel> obtenerporEstado(String estado) {
+    /*public ArrayList<movimiento_detalleModel> obtenerporEstado(String estado) {
         return movimientoRepository.findByEstado(estado);
+    }*/
+    
+    //FAlta metodo por estado
+    /*public List<movimiento_detalleModel> getByEstado(String estado) {
+        return movimientoDetalleRepository.findByEstado(estado);
+    }*/
+    
+     public movimientoDetalleService(movimientoDetalleRepository movimientoDetalleRepository) {
+        this.movimientoDetalleRepository = movimientoDetalleRepository;
+    }
+
+    
+     public List<movimiento_detalleModel> getByMovimientoId(Integer id) {
+         return movimientoDetalleRepository.findByMovimientoId(id);
      }
-        
+
+     
 
     public boolean eliminarMovimientoDetalle(Integer id) {
         try {
@@ -45,5 +61,7 @@ public class movimientoDetalleService {
             return false;
         }
     }
+
+    
     
 }

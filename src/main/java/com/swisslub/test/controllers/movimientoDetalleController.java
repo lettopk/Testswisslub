@@ -1,9 +1,11 @@
 package com.swisslub.test.controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.swisslub.test.models.movimientoModel;
 import com.swisslub.test.models.movimiento_detalleModel;
+import com.swisslub.test.repositories.movimientoDetalleRepository;
 import com.swisslub.test.services.movimientoDetalleService;
 
 @RestController
@@ -27,28 +30,36 @@ public class movimientoDetalleController {
     @Autowired
     com.swisslub.test.services.movimientoService movimientoService;
 
+    @Autowired
+    movimientoDetalleRepository movimientoDetalleRepository;
+
     @GetMapping
     public ArrayList<movimiento_detalleModel> obtenerMovimientoDetalle() {
         return movimientoDetalleService.obtenerMovimientoDetalle();
     }
 
+    //_________________________
     @PostMapping
     public movimiento_detalleModel guardarMovimientoDetalle(@RequestBody movimiento_detalleModel movimiento_detalle) {
         return this.movimientoDetalleService.guardarMovimientoDetalle(movimiento_detalle);
     }
-    
 
     @GetMapping (path = "/{id}")
     public Optional<movimiento_detalleModel> obtenerMovimientoDetallePorId(@PathVariable("id") Integer id) {
         return this.movimientoDetalleService.obtenerporId(id);
     }
     
-    //consulta el listado de movimiento por estado
-    @GetMapping("/estado")
-    @ResponseBody
-    public ArrayList<movimientoModel> obtenerMovimientoPorEstado(@RequestParam("estado") String estado) {
-        return this.movimientoService.obtenerporEstado(estado);
     
+    /*@GetMapping("/estado1/{estado}")
+    public ResponseEntity<List<movimiento_detalleModel>> getByEstado(@PathVariable String estado) {
+        List<movimiento_detalleModel> movimientoDetalles = movimientoDetalleService.getByEstado(estado);
+        return ResponseEntity.ok(movimientoDetalles);
+    }*/
+    
+    @GetMapping("/movimientoId/{movimientoId}")
+    public ResponseEntity<List<movimiento_detalleModel>> getByMovimientoId(@PathVariable Integer movimientoId) {
+        List<movimiento_detalleModel> movimientoDetalles = movimientoDetalleService.getByMovimientoId(movimientoId);
+        return ResponseEntity.ok(movimientoDetalles);
     }
 
     @DeleteMapping (path = "/{id}")
